@@ -40,8 +40,15 @@ public class Circle implements Shape{
     }
 
     @Override
-    double calculateArea(){
+    public double calculateArea(){
         return Math.PI * Math.pow(this.radius,2);     //Math.pow
+    }
+
+    @Override
+    public String toString(){
+        return "Circle: " + this.radius + " "
+        + "\n | - Perimeter : " + calculatePerimeter() + " "
+        + "\n | - Area : " + calculateArea() + "." ;
     }
 
 }

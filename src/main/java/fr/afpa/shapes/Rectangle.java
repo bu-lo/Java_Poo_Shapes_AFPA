@@ -1,6 +1,6 @@
 package fr.afpa.shapes;
 
-// TODO implémenter la classe Rectangle
+//implémenter la classe Rectangle
 // se référer au diagramme UML contenu dans le sous-dossier "doc" pour retrouver les informations concernant ses attributs
 
 // CLASS Rectangle implémente INTERFACE Shape
@@ -41,12 +41,19 @@ public void setWidth(double width) {
 
     @Override
     public double calculatePerimeter(){
-        return this.width*2 + this.width*2;
+        return this.width*2 + this.length*2;
     }
 
     @Override
-    double calculateArea(){
-        return this.length * this.width
+    public double calculateArea(){
+        return this.length * this.width;
+    }
+
+    @Override
+    public String toString(){
+        return "Rectangle: " + this.length + ", " + this.width + " "
+        + "\n | - Perimeter : " + calculatePerimeter() + " "
+        + "\n | - Area : " + calculateArea() + "." ;
     }
 
 }

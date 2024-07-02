@@ -36,23 +36,24 @@ package fr.afpa.shapes;
 */
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
-class GeometricShapeMain
-{
-	public static void main(String[] args) 
-	{
-		// instancier plusieurs objets des classes Rectangle et Circle (2 instances de chaque)
+class GeometricShapeMain {
+	public static void main(String[] args) {
+		// instancier plusieurs objets des classes Rectangle et Circle (2 instances de
+		// chaque)
 
-		Shape rectangle1 = new Rectangle(3,4);
-		Shape rectangle2 = new Rectangle(30,40);
+		Shape rectangle1 = new Rectangle(3, 4);
+		Shape rectangle2 = new Rectangle(30, 40);
 
 		Shape circle1 = new Circle(5);
 		Shape circle2 = new Circle(50);
 
-		// TODO ajouter ces objets à une instance de la classe "ArrayList"
-		// plus d'information sur la classe "ArrayList" -> https://info.clg.qc.ca/java/structures/array-list
+		// ajouter ces objets à une instance de la classe "ArrayList"
+		// plus d'information sur la classe "ArrayList" ->
+		// https://info.clg.qc.ca/java/structures/array-list
 
-		ArrayList<Integer> listShapes = new ArrayList<Integer>();
+		ArrayList<Shape> listShapes = new ArrayList<Shape>();
 		listShapes.add(rectangle1);
 		listShapes.add(rectangle2);
 		listShapes.add(circle1);
@@ -60,11 +61,18 @@ class GeometricShapeMain
 
 		System.out.println("La liste comprends " + listShapes.size() + " élements.");
 
-		// TODO boucler sur les éléments de la liste afin d'afficher le périmètre et l'aire de chaque objet
-		ListIterator<Integer> li = listShapes.listIterator<Integer>();
-			while (li.hasNext())
-				System.out.println(li.next());
+		// boucler sur les éléments de la liste afin d'afficher le périmètre et l'aire
+		// de chaque objet
+		ListIterator<Shape> li = listShapes.listIterator();
+		while (li.hasNext()){
+			System.out.println(li.next());
+		}
 		
+		System.out.println("----------------------------------------");
+
+		for (Shape shape : listShapes) {   //autre méthode
+			System.out.println(shape);
+		}
 	}
 
 }
